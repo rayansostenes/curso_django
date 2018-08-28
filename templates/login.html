@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="apple-mobile-web-app-title" content="Semear">
+    <meta name="application-name" content="Semear">
+    <meta name="theme-color" content="#db5945">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static "neuboard/plugins/bootstrap/css/bootstrap.min.css" %}">
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="{% static "neuboard/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "neuboard/css/simple-line-icons.css" %}">
+
+    <!-- CSS Animate -->
+    <link rel="stylesheet" href="{% static "neuboard/css/animate.css" %}">
+    <!-- Custom styles for this theme -->
+    <link rel="stylesheet" href="{% static "neuboard/css/main.css" %}">
+    <!-- Feature detection -->
+    <script src="{% static "neuboard/js/vendor/modernizr-2.6.2.min.js" %}"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{% static "neuboard/js/vendor/html5shiv.js" %}"></script>
+    <script src="{% static "neuboard/js/vendor/respond.min.js" %}"></script>
+    <![endif]-->
+    <style type="text/css">
+        body{
+            background-image: url('{% static "img/login_bg_blur.jpg" %}');
+            background-size: cover;
+        }
+        #login-wrapper .panel{
+            box-shadow: 0 0 3px rgba(0,0,0,.13),0 3px 6px rgba(0,0,0,.26);
+        }
+        #login-wrapper .panel .panel-heading{
+            background: #27b6af;
+            border: none;
+            border-radius: 0px;
+        }
+
+        #login-wrapper .brand .logo img{
+            filter: drop-shadow(0 0 6px rgba(255,255,255,1));
+            width: 100px;
+        }
+
+    </style>
+
+    <title>Semear - Login</title>
+
+</head>
+
+<body>
+    <section class="container animated fadeInUp">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="login-wrapper">
+                    <header>
+                        <div class="brand">
+                            <a href="index.html" class="logo">
+                                <img src="{% static "img/logo.png" %}">
+                                <span style="color: white;text-transform: none;">Semear</span>
+                            </a>
+                        </div>
+                    </header>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                           Acessar
+                        </h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Faça login para acessar sua conta</p>
+                            <form class="form-horizontal" role="form" method="post" action="{% url 'login' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control"  name="username" id="email" placeholder="Usuário">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Senha">
+                                        <i class="fa fa-lock"></i>
+                                        <a href="javascript:void(0)" class="help-block">Esqueceu sua senha?</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button style="color:white" class="btn btn-success btn-block">Entrar</button>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Global JS-->
+    <script src="{% static "neuboard/js/vendor/jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "neuboard/plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "neuboard/plugins/navgoco/jquery.navgoco.min.js" %}"></script>
+    <script src="{% static "neuboard/plugins/pace/pace.min.js" %}"></script>
+    <script src="{% static "neuboard/js/src/app.js" %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <th>
+            <td>Nome</td>
+            <td>email</td>
+            <td>ativo</td>
+        </th>
+    </thead>
+    <tbody>
+        {% for row in pessoas %}
+        <tr>
+            <td>{{row.name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.is_active}}</td>
+            <td>
+                <a href="/core/person/{{ row.pk }}/update">Editar</a>
+                <a href="/core/person/{{ row.pk }}/delete">Apagar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

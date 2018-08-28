@@ -1,0 +1,19 @@
+{% load custom_tag %}
+<table class="table">
+    <thead>
+        <th>            
+            {% for title, name in collumns  %}
+                <td>{{title}}</td>
+            {% endfor %}
+        </th>
+    </thead>
+    <tbody>
+        {% for row in obj_list %}
+        <tr>        
+            {% for title, name in collumns %}
+                <td>{{ row | get_attr:name }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
