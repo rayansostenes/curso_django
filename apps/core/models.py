@@ -1,7 +1,20 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
 
-User = get_user_model()
+
+class Usuario(AbstractUser):
+    nome = models.CharField(max_length=255)
+    localidade = models.CharField(max_length=255)
+    saudacao = models.CharField(max_length=255)
+    cnpj = models.CharField(max_length=255)
+    filial_conveniada = models.CharField(max_length=255)
+    conveniada = models.CharField(max_length=255)
+    sequencia_conveniada = models.CharField(max_length=255)
+    codigo_portal = models.CharField(max_length=255)
+    contato_empresa = models.CharField(max_length=255)
+
+
+
 
 class Phone(models.Model):
     CARRIER_CHOICES = (
@@ -21,7 +34,6 @@ class Person(models.Model):
     email = models.EmailField()
     phone = models.ManyToManyField(Phone, verbose_name='Telefone')
     # address = models.ManyToManyField(Address, verbose_name='Endereço')
-    created_by = models.ForeignKey(User, verbose_name='Criado Por', on_delete=models.CASCADE, null=True)
     created_on = models.DateTimeField('Criado Em', auto_now_add=True)
     is_active = models.BooleanField('Ativo', default=False)
 

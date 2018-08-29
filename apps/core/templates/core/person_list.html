@@ -2,9 +2,6 @@
 
 {% block content %}
 {% load custom_tag %}
-
+<h1>{{ request.user.nome }} - {{ request.user.localidade }}</h1>
 {% generic_table pessoas collumns %}
-
-    
 {% endblock content %}
-    

@@ -1,5 +1,6 @@
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from core.models import Person
 
 class PersonCreate(CreateView):
@@ -16,11 +17,10 @@ class Counter:
     def add(self):
         self.count += 1
 
-
-
-class PersonList(ListView):
+class PersonList(LoginRequiredMixin, ListView):
     model = Person
     context_object_name = 'pessoas'
+    login_url = '/core/login'
 
     def get_context_data(self, *args, **kw):
         result = super().get_context_data(*args, **kw)
