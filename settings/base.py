@@ -27,7 +27,8 @@ SECRET_KEY = '-c!&+d3gfd9kch5-d%*x%7%oj92li(!!#cedk@0r=rr64o_ry('
 DEBUG = os.getenv('DJANGO_DEBUG', False)
 
 ALLOWED_HOSTS = [
-    'localhost'
+    'localhost',
+    '35.237.236.8'
 ]
 
 INTERNAL_IPS = [
