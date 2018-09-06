@@ -19,13 +19,13 @@ from django.urls import path
 from django.conf import settings
 
 from django.conf.urls.static import static
-import debug_toolbar
 
-# admin.autodiscover()
+debug = []
+if settings.DEBUG:
+    import debug_toolbar
+    debug = [path(r'^__debug__/', include(debug_toolbar.urls))]
 
-urlpatterns = [
-    path(r'^__debug__/', include(debug_toolbar.urls)),
-] + [
+urlpatterns = debug + [
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
