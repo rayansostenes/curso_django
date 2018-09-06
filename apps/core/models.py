@@ -17,6 +17,9 @@ class Usuario(AbstractUser):
 
 
 class Phone(models.Model):
+    class Meta:
+        managed = False
+
     CARRIER_CHOICES = (
         (1, 'TIM'),
         (1, 'Claro'),

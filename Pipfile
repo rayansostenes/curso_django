@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 django = "*"
+"django-bootstrap4" = "*"
+reportlab = "*"
+pypandoc = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 pylint = "*"

@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
+
 {% block content %}
 <form class="form-horizontal" role="form" action="{{ request.get_full_path }}" method="post">
     <div class="modal-header">
@@ -8,7 +10,16 @@
 
     {% csrf_token %}
     <div class="modal-body" style="padding: 15px 30px;">
-        {{ form }}
+        {% bootstrap_form form %}
+
+        <div>
+            {{ form.name.errors}}
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            <p>{{ form.name.help_text }}</p>
+        </div>
+
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

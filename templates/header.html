@@ -1,28 +1,24 @@
-{% load static %}
-<header id="header">
-    <div class="brand">
-        <a href="/" class="logo">
-            <span>SAFRA</span> 16/17
-        </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CursoDjango</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/core/person/list">Pessoas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/core/download_pdf">Baixar PDF</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/core/download_docx">Baixar DOCX</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/core/download_csv">Baixar CSV</a>
+            </li>
+        </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown profile hidden-xs">
-            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="meta">
-                    <span class="avatar">
-                        <img src="{% static "neuboard/img/profile.jpg" %}" class="img-circle">
-                    </span>
-                    <span class="text"></span>
-                    <span class="caret"></span>
-                </span>
-            </a>
-            <ul class="dropdown-menu animated fadeInTop" role="menu">
-                <li style="padding: 0">
-                    <a href="#">
-                        <span class="icon"><i class="fa fa-sign-out"></i>
-                        </span>Sair</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</header>
+</nav>

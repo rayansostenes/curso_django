@@ -1,11 +1,11 @@
 {% load custom_tag %}
 <table class="table">
     <thead>
-        <th>            
-            {% for title, name in collumns  %}
-                <td>{{title}}</td>
-            {% endfor %}
-        </th>
+      <tr>
+        {% for title, name in collumns  %}
+            <th scope="col">{{title}}</th>
+        {% endfor %}
+      </tr>
     </thead>
     <tbody>
         {% for row in obj_list %}
@@ -16,4 +16,4 @@
         </tr>
         {% endfor %}
     </tbody>
-</table>
+  </table>

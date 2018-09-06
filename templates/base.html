@@ -1,3 +1,4 @@
+{% load bootstrap4 %} {% load string_utils %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -8,25 +9,18 @@
 
 <head>
     <title>{% block page_title %}Curso Django{% endblock %}</title>
-    {% include "head.html" %}
-    {% block extra_head %}{% endblock %}
-    {% load string_utils %}
+    {% include "head.html" %} {% bootstrap_css %} {% block extra_head %}{% endblock %}
 </head>
 
-<body>
-    <section id="main-wrapper" class="theme-default">
-        <!-- {% include "header.html" %} -->
-<!-- {#        {% include "sidebar.html" %}#} -->
 
-        <section class="main-content-wrapper">
-            <div class="pageheader">
-                <h1 style="display: inline-block; margin-left: 15px;">{% block content_h1 %}Titulo da Página{% endblock %}</h1>
-            </div>
-            
-            <section id="main-content" class="">
-                {% block content %}{% endblock %}
-            </section>
-        </section>
-    </section>
+<body>
+    <header>
+        {% include "header.html" %}
+    </header>
+    <main role="main" class="container">
+        {% block content %}{% endblock %}
+    </main>
+    {% bootstrap_javascript jquery='full' %}
 </body>
+
 </html>
